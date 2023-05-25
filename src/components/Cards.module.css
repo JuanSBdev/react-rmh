@@ -1,0 +1,18 @@
+
+.Cards{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    margin: 1%;
+    padding: 5%;
+}
+.div3{
+    position: absolute;
+    width: 9%;
+    height: 190px;
+    background-image: url("https://i.pinimg.com/originals/97/43/3b/97433b480b0f5686e6df7a6b3158fe8c.gif");
+    background-size: cover;
+    right: 10%;
+    
+  }

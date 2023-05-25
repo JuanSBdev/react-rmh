@@ -1,0 +1,9 @@
+  @import url('https://fonts.googleapis.com/css2?family=Flow+Circular&family=Unica+One&display=swap');
+:root{
+  font-family: 'Unica One', cursive;
+
+    background-color: rgb(100, 199, 238);
+  background-image: url('https://images7.alphacoders.com/100/1003059.jpg');
+  background-size:18%;
+  background-repeat:repeat;
+}

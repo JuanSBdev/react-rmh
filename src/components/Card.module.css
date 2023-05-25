@@ -1,0 +1,44 @@
+h2{
+    font-size: 1.3rem;
+    margin: 2%;
+}
+.divCarta{
+    width: 20%;
+    border: 1px solid black;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    border-radius: 1rem;
+    padding: 1%;
+    margin: 1%;
+    background-color: rgb(97, 206, 223);
+}
+.btnsCard{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
+}
+.button{
+    background-color: rgb(241, 23, 23);
+    width: 20%;
+    padding: 1%;
+    border-radius: 1rem;
+}
+.buttonFav{
+    width: 20%;
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+}
+.nombre{
+    color: darkblue;
+}
+.btn_img{
+    width: 90%;
+}
+.characterImg{
+    border-radius: 10rem;
+    border: 2px solid black;
+    width: 100%;
+}
