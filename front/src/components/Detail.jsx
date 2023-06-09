@@ -6,16 +6,23 @@ export  default function Detail (props){
     const { id } = useParams();
     const [character, setCharacter] = useState({})
     useEffect(() => {
-        axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-           if (data.name) {
-              setCharacter(data);
-              console.log(data)
-           } else {
-              window.alert('No hay personajes con ese ID');
-           }
+      fetch(`http://localhost:3001/rickandmorty/detail/${id}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.name) {
+            setCharacter(data);
+          } else {
+            window.alert('No hay personajes con ese ID');
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching character:', error);
+          // Handle the error, e.g., show an error message or retry the request
         });
-        return setCharacter({});
-     }, [id]);
+      return () => {
+        setCharacter({});
+      };
+    }, [id]);;
      return(
             <div> {character.name ? 
                 (

@@ -9,7 +9,7 @@ export let abt_img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/
 export let btn_imgHome = 'https://therickandmortylibrary.netlify.app/static/media/rick-and-morty-hero-image.117dbeac17dee88b2029.png';
 
 export default function Card(props) {
-   const { id, onClose } = props;
+   const { id, onClose, } = props;
    const dispatch = useDispatch();
 
    const myFavorites = useSelector(state => state.myFavorites);
@@ -58,7 +58,7 @@ export default function Card(props) {
             <h2>&#x2764; {props.status}</h2>
             <h2>{props.species}</h2>
             <h2>{props.gender}</h2>
-            <h2>{props.name.origin}</h2>
+            <h2>{props.origin} asd</h2>
          </NavLink>
       </div>
    );
