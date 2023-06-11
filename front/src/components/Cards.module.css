@@ -3,9 +3,11 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    text-align: center;
+    text-align: start;
+    align-content: auto;
     margin: 1%;
     padding: 5%;
+    width: 80%;
 }
 .div3{
     position: absolute;

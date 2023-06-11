@@ -3,22 +3,23 @@ h2{
     margin: 2%;
 }
 .divCarta{
+    position: relative;
     width: 20%;
-    border: 1px solid black;
+    height: 30%;
+    max-height: 500px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
     border-radius: 1rem;
     margin: 1%;
-    background-color: rgba(41, 117, 98, 0.779);
-    overflow: hidden;
+    background-color: rgba(41, 117, 98, 0.89);
+
 }
 .cardInfo{
-    display: none;
+    display:contents;
 }
-.cardInfoShow {
-    display: contents;
-}
+
+
 .btnsCard{
     width: 100%;
     display: flex;
@@ -28,18 +29,18 @@ h2{
 }
 .button{
     position: absolute;
-    background-color: rgba(241, 23, 23, 0.601);
-    width: 2%;
+    background-color: rgba(237, 44, 44, 0.601);
+    width: 20%;
     padding: 1%;
     display: flex;
     justify-content: center;
     border-radius: .5rem;
-    margin-left: 14%;
+    margin-left: 74%;
     margin-top: 1%;
     border: 0;
 }
 :hover.button{
-    background-color: rgba(227, 25, 25, 0.733);
+    background-color: rgba(227, 25, 25, 0.931);
 
 }
 .buttonFav{
@@ -58,3 +59,4 @@ h2{
     border-radius: 1rem;
     width: 100%;
 }
+
