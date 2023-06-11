@@ -13,6 +13,7 @@ h2{
     border-radius: 1rem;
     margin: 1%;
     background-color: rgba(41, 117, 98, 0.89);
+    box-shadow: 0 0 20px 2px;
 
 }
 .cardInfo{
@@ -45,7 +46,7 @@ h2{
 }
 .buttonFav{
     position: absolute;
-    width: 2%;
+    width: 20%;
     background-color: rgba(240, 248, 255, 0);
     border: none;
 }

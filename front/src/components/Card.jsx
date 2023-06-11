@@ -65,7 +65,6 @@ export default function Card(props) {
                         <h2 className={styles.nombre}>{props.name}</h2>
            <h2 className={styles.status}>&#x2764; {props.status}</h2>
           <h2>{props.species}</h2>
-          {/* <h2>{props.gender}</h2> */}
           <h2>{props.origin}</h2>
         </div>
       )}
