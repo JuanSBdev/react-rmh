@@ -15,7 +15,9 @@ export default function Card(props) {
    const myFavorites = useSelector(state => state.myFavorites);
    
    const [isFav, setIsFav] = useState(false);
-   
+   const [infoCard, setInfoCard] = useState({className: styles.cardInfo})
+
+
    useEffect(() => {
       myFavorites.forEach((fav) => {
          if (fav.id === id) {
@@ -34,8 +36,20 @@ export default function Card(props) {
       onClose(id);
    };
   
+   const handleInfo = () => {
+      if(infoCard.className === styles.cardInfo){
+         setInfoCard({className: styles.cardInfoShow})
+      }
+      else{
+         setInfoCard({className: styles.cardInfo})
+
+      }
+   }
+   
+
+
    return (
-      <div className={styles.divCarta}>
+      <div className={styles.divCarta} onMouseEnter ={handleInfo} onMouseLeave={handleInfo} >
          <div className={styles.btnsCard}>
          {
             isFav ? (
@@ -52,14 +66,16 @@ export default function Card(props) {
          }
          <button className={styles.button} onClick={handleOnClose}>X</button>
          </div>
-         <NavLink to={`/detail/${id}`}>
-            <h2 className={styles.nombre}>{props.name}</h2>
+         {/* <NavLink to={`/detail/${id}`}> */}
             <img className={styles.characterImg} src={props.image} alt='RickImage' />
-            <h2>&#x2764; {props.status}</h2>
-            <h2>{props.species}</h2>
-            <h2>{props.gender}</h2>
-            <h2>{props.origin} asd</h2>
-         </NavLink>
+                  <h2 className={styles.nombre}>{props.name}</h2>
+                  <h2 className={styles.status}>&#x2764; {props.status}</h2>
+            <div className={infoCard.className}>
+                  <h2>{props.species}</h2>
+                  <h2>{props.gender}</h2>
+                  <h2>{props.origin} asd</h2>
+            </div>
+         {/* </NavLink> */}
       </div>
    );
 }
