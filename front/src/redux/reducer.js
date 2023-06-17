@@ -23,7 +23,7 @@ import { ADD_FAV, REMOVE_FAV, GET_FAV } from "./action_types";
                         return {
                           ...state,
                           myFavorites: action.payload,
-                          Characters: action.payload.map((character) => ({
+                          allCharacters: action.payload.map((character) => ({
                             id: character.id,
                             name: character.name,
                             // Agrega otras propiedades de los personajes de SSBB que deseas guardar

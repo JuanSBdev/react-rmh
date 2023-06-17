@@ -1,11 +1,16 @@
 import React from 'react';
+import {useEffect} from 'react';
 import Card from '../Card';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from '../cards.module.css';
+import { getFavorites } from '../../redux/actions';
 
 export default function Favorites(props) {
+  const dispatch = useDispatch();
   const myFavorites = useSelector(state => state.myFavorites);
-
+  useEffect(() => {
+    dispatch(getFavorites());
+  }, [dispatch]);
   return (
     <div className={styles.Cards}>
       {myFavorites.length > 0 ? (
@@ -18,7 +23,7 @@ export default function Favorites(props) {
             // species={character.species}
             // gender={character.gender}
             // origin={character.origin}
-            // image={character.image}
+            image={character.image}
           />
         ))
       ) : (

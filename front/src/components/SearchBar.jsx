@@ -42,9 +42,9 @@ export default function SearchBar(props) {
             <label > Buscar por ID:</label>
             <input className={styles.input}
                placeholder='add numero..'
-            type='search'
-            name='search'
-            onChange={handleChange}
+               type='search'
+               name='search'
+               onChange={handleChange}
             />
             <button className={styles.button} onClick={()=> props.onSearch(id)}>🔎</button>
             {

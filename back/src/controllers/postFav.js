@@ -22,6 +22,15 @@ const { Favorite } = require('../DB_connection')
         res.status(501).json({mensaje: error.message})
     }
 };
+const getFav = async (req, res) => {
+    try {
+      const favorites = await Favorite.findAll();
+      res.status(200).json(favorites);
+    } catch (error) {
+      res.status(500).json({ message: 'Error al obtener los favoritos', error });
+    }
+  };
 module.exports ={
-    postFav
+    postFav,
+    getFav
 }
