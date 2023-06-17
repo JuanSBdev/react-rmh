@@ -19,10 +19,10 @@ export default function Favorites(props) {
             key={index}
             id={character.id}
             name={character.name}
-            // status={character.status}
-            // species={character.species}
-            // gender={character.gender}
-            // origin={character.origin}
+            status={character.status}
+            species={character.species}
+            gender={character.gender}
+            origin={character.origin}
             image={character.image}
           />
         ))
