@@ -8,12 +8,11 @@ import { ADD_FAV, REMOVE_FAV, GET_FAV } from "./action_types";
     const reducer = ( state = initialState, action)=>{
         switch(action.type){
 
-                case ADD_FAV:
-                        return { ...state,
-                             myFavorites: action.payload,
-                             };
-
-                        
+            case ADD_FAV:
+                return {
+                  ...state,
+                  myFavorites: [...state.myFavorites, action.payload],
+                };
                 case REMOVE_FAV:
                     let updatedFavs = state.myFavorites.filter(ch => ch.id !== Number(action.payload))
                     return{
@@ -24,7 +23,7 @@ import { ADD_FAV, REMOVE_FAV, GET_FAV } from "./action_types";
                         return {
                           ...state,
                           myFavorites: action.payload,
-                          allCharacters: action.payload.map((character) => ({
+                          Characters: action.payload.map((character) => ({
                             id: character.id,
                             name: character.name,
                             // Agrega otras propiedades de los personajes de SSBB que deseas guardar
