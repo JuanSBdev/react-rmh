@@ -13,8 +13,8 @@ const { getCharById } = require('../controllers/getCharById')
 
 router.get('/login', login)
 router.post('/login', postUser )
-router.delete('/fav/:id', deleteFav)
 router.post('/fav', postFav)
+router.delete('/fav/:id', deleteFav)
 router.get('/onsearch/:id', getCharById)
 router.get('/detail/:detailId', getCharDetail)
 

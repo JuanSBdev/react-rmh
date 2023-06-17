@@ -7,7 +7,7 @@ try {
             email,
              password
         });
-        res.status(200).json(newUser)
+        res.status(200).json({ message:'nuevo usuario creado', user: newUser})
     }
     else{
         res.status(400).json({message: 'Faltan datos'})

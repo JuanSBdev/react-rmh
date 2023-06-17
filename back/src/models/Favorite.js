@@ -4,8 +4,9 @@ module.exports = (sequelize) => {
    sequelize.define('Favorite', {
       id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true },
+      allowNull: true,
+      primaryKey: true 
+      },
       name:{
          type: DataTypes.STRING,
          allowNull: false
@@ -13,25 +14,25 @@ module.exports = (sequelize) => {
       status:{
          type: DataTypes.ENUM,
          values: ['Alive', 'Dead', 'Unknown'],
-         allowNull: false,
+         allowNull: true,
       },
       species:{
          type: DataTypes.STRING,
-         allowNull: false,
+         allowNull: true,
       },
       gender:{
          type: DataTypes.ENUM,
          values:['Female', 'Male', 'Genderless', 'Unknown'],
-         allowNull: false
+         allowNull: true
       },
       origin:{
          type: DataTypes.STRING,
-         allowNull: false
+         allowNull: true
          
       },
       image:{
          type: DataTypes.STRING,
-         allowNull: false
+         allowNull: true
       }
    }, { timestamps: false
     }

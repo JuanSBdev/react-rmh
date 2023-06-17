@@ -3,12 +3,12 @@ const { Favorite } = require('../DB_connection')
     try {
         const { id } = req.params;
         if(id){
-            const dtd = await Favorite.destroy({
+            const deleteThis = await Favorite.destroy({
                 where:{
                     id
                 }
             });
-                const favoritos = Favorite.findAll()
+                const favoritos = await Favorite.findAll()
                 res.status(200).json(favoritos)        }
         else{
             res.status(401).json({mensaje: 'Faltan datos'})
