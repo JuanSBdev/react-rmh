@@ -1,9 +1,9 @@
 const { Favorite } = require('../DB_connection')
  const postFav = async (req, res)=>{
     try {
-        const { name, origin, status, image, species, gender, id} = req.body;
-        //  
-        if( name&&  status && image && species ){
+        const { name,  status, image, species, id} = req.body;
+        //   &&  status && image && species
+        if( name ){
             const newFav = await Favorite.create({
                 id,
                 name, 
