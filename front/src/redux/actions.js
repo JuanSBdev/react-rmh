@@ -6,7 +6,7 @@ export const addFav = (character) => {
    return function(dispatch) {
      axios.post(endpoint, character)
      .then((response)=> {
-        console.log(response);
+      //   console.log(response);
        return dispatch({
          type: ADD_FAV,
          payload: character,
@@ -48,6 +48,7 @@ export const addFav = (character) => {
        });
    };
  };
+ 
 // export const addFav = (character )=>{
 //     return{
 //         type: ADD_FAV,

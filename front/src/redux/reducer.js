@@ -11,7 +11,7 @@ import { ADD_FAV, REMOVE_FAV, GET_FAV } from "./action_types";
                 case ADD_FAV:
                         return { ...state,
                              myFavorites: action.payload,
-                              allCharacters:  action.payload };
+                             };
 
                         
                 case REMOVE_FAV:
@@ -20,11 +20,16 @@ import { ADD_FAV, REMOVE_FAV, GET_FAV } from "./action_types";
                         ...state,
                             myFavorites: updatedFavs
                     };
-                case GET_FAV:
+                    case GET_FAV:
                         return {
                           ...state,
                           myFavorites: action.payload,
-                        };
+                          allCharacters: action.payload.map((character) => ({
+                            id: character.id,
+                            name: character.name,
+                            // Agrega otras propiedades de los personajes de SSBB que deseas guardar
+                          })),
+                        }
                     
                 default:
                     return{

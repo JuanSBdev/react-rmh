@@ -24,7 +24,7 @@ export default function Card(props) {
             return;
          }
       });
-   }, [myFavorites, id]);
+   }, [id]);
 
    const handleFavorite = () => {
       isFav ? dispatch(removeFav(id)) : dispatch(addFav(props));

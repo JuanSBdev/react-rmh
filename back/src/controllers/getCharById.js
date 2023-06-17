@@ -1,6 +1,5 @@
 const URL = "https://rickandmortyapi.com/api/character/";
 const axios = require('axios');
-const { response } = require('express');
 
 function getCharById(req, res){
     const { id } = req.params;    

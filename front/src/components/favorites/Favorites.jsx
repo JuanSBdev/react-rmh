@@ -8,17 +8,17 @@ export default function Favorites(props) {
 
   return (
     <div className={styles.Cards}>
-      {Array.isArray(myFavorites) && myFavorites.length > 0 ? (
+      {myFavorites.length > 0 ? (
         myFavorites.map((character, index) => (
           <Card
             key={index}
             id={character.id}
             name={character.name}
-            status={character.status}
-            species={character.species}
-            gender={character.gender}
-            origin={character.origin}
-            image={character.image}
+            // status={character.status}
+            // species={character.species}
+            // gender={character.gender}
+            // origin={character.origin}
+            // image={character.image}
           />
         ))
       ) : (

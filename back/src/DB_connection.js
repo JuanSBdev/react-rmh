@@ -15,7 +15,7 @@ const sequelize = new Sequelize(
 
 // EJERCICIO 05
 // Debajo de este comentario puedes ejecutar la función de los modelos.
-const  FavoriteModel= require('./models/Favorite')
+const  FavoriteModel = require('./models/Favorite')
 const  UserModel = require('./models/User')
 //
 FavoriteModel(sequelize)

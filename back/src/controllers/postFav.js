@@ -1,16 +1,17 @@
 const { Favorite } = require('../DB_connection')
  const postFav = async (req, res)=>{
     try {
-        const { name, origin, status, image, species, gender} = req.body;
-        // && origin && status && image && species && gender
-        if(name){
+        const { name, origin, status, image, species, gender, id} = req.body;
+        //  
+        if( name&&  status && image && species ){
             const newFav = await Favorite.create({
+                id,
                 name, 
-                origin,
+                // origin,
                 status,
                 image,
                 species,
-                gender
+                // gender
             })
             res.status(200).json(newFav)
         }
@@ -18,7 +19,7 @@ const { Favorite } = require('../DB_connection')
             res.status(401).json({mensaje: 'Faltan datos'})
         }
     } catch (error) {
-        res.status(500).json({mensaje: error.message})
+        res.status(501).json({mensaje: error.message})
     }
 };
 module.exports ={

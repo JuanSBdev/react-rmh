@@ -4,16 +4,19 @@ module.exports = (sequelize) => {
    sequelize.define('Favorite', {
       id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      primaryKey: true 
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement:true,
+      unique: false
       },
       name:{
          type: DataTypes.STRING,
-         allowNull: false
+         allowNull: false,
       },
       status:{
-         type: DataTypes.ENUM,
-         values: ['Alive', 'Dead', 'Unknown'],
+         type: DataTypes.STRING,
+         // type: DataTypes.ENUM,
+         // values: ['Alive', 'Dead', 'Unknown'],
          allowNull: true,
       },
       species:{
@@ -21,8 +24,11 @@ module.exports = (sequelize) => {
          allowNull: true,
       },
       gender:{
-         type: DataTypes.ENUM,
+         type: DataTypes.STRING,
+         // type: DataTypes.ENUM,
+
          values:['Female', 'Male', 'Genderless', 'Unknown'],
+         
          allowNull: true
       },
       origin:{
