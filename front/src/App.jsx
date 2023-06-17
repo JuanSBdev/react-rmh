@@ -25,8 +25,7 @@ function App() {
    ])
   
    const [access, setAccess] = useState(false);
-   //  const EMAIL = 'ejemplo@gmail.com';
-   //  const PASSWORD = '123';
+ 
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -40,12 +39,7 @@ function App() {
       });
    }
     
-   //  function login(userData) {
-   //     if (userData.password === PASSWORD && userData.email === EMAIL) {
-   //        setAccess(true);
-   //        navigate('/home');
-   //     }
-   //  }
+
 
    useEffect(()=>{
       !access && navigate('/')
@@ -66,20 +60,6 @@ try {
 }
    }
 
-   //    fetch(`http://localhost:3001/rickandmorty/onsearch/${id}`)
-   //      .then(response => response.json())
-   //      .then(data => {
-   //        if (data.name) {
-   //          setCharacters(oldChars => [...oldChars, data]);
-   //        } else {
-   //          window.alert('¡No hay personajes con este ID!');
-   //        }
-   //      })
-   //      .catch(error => {
-   //        console.error('Error fetching character:', error);
-   //        // Handle the error, e.g., show an error message or retry the request
-   //      });
-   //  }
    function onClose(id) {
       setCharacters(
         characters.filter((c) => {c.id !== parseInt(id)})

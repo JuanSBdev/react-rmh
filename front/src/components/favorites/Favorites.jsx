@@ -1,12 +1,14 @@
 import React from 'react';
 import Card from '../Card';
 import { useSelector } from 'react-redux';
-import styles from '../cards.module.css'
+import styles from '../cards.module.css';
+
 export default function Favorites(props) {
   const myFavorites = useSelector(state => state.myFavorites);
+
   return (
     <div className={styles.Cards}>
-      {myFavorites?.length > 0 ? (
+      {Array.isArray(myFavorites) && myFavorites.length > 0 ? (
         myFavorites.map((character, index) => (
           <Card
             key={index}
@@ -24,5 +26,4 @@ export default function Favorites(props) {
       )}
     </div>
   );
-      };
-  
+}
