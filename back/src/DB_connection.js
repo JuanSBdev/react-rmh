@@ -17,6 +17,7 @@ UserModel(sequelize)
 
 const { User, Favorite } = sequelize.models;
 
+
 Favorite.belongsToMany(User, {through: 'user_favorite'})
 User.belongsToMany(Favorite, {through: 'user_favorite'})
 

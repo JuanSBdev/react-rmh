@@ -22,7 +22,7 @@ export  default function Detail (props){
       return () => {
         setCharacter({});
       };
-    }, [id]);;
+    }, [id]);
      return(
             <div> {character.name ? 
                 (

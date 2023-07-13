@@ -2,7 +2,7 @@ import './App.css';
 import Cards from './components/Cards.jsx';
 import Nav from './components/Nav';
 import { useEffect, useState } from 'react';
-import { Route, Routes,useLocation ,useNavigate} from 'react-router-dom'
+import { Route, Routes, useLocation ,useNavigate} from 'react-router-dom'
 import About from './components/About';
 import Detail from './components/Detail';
 import Form from './components/form/Form';
