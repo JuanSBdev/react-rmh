@@ -2,6 +2,8 @@ import {React , useEffect, useState} from "react";
 import { useParams } from 'react-router-dom'
 import  axios  from "axios";
 
+import styles from './Detail.module.css'
+
 export  default function Detail (props){
     const { id } = useParams();
     const [character, setCharacter] = useState({})
@@ -11,6 +13,7 @@ export  default function Detail (props){
         .then(data => {
           if (data.name) {
             setCharacter(data);
+            console.log(character)
           } else {
             window.alert('No hay personajes con ese ID');
           }
@@ -22,18 +25,23 @@ export  default function Detail (props){
       return () => {
         setCharacter({});
       };
-    }, [id]);
+    }, [id]);;
      return(
-            <div> {character.name ? 
+            <div className={styles.wrapper} >
+               {character.name ? 
                 (
-                    <div>
-                        <h1> Name: {character.name} </h1>
+                    <div className={styles.card} > 
+                    <img  src= { character.image } /> 
+                    <div className={styles.info}>
+
+                        <h1> {character.name} </h1>
+                        <h2>&#x2764; {character.status}</h2>
                         <h3>gender: {character.gender} </h3>
-                        <h3>specie: {character.specie} </h3>
+                        <h3>specie: {character.species} </h3>
                         <h3>Location: {character.origin.name} </h3>
-                        <img  src= { character.image } /> 
                     </div>
-                ) : ( <h2>asd</h2>)
+                    </div>
+                ) : ( <h2 className={styles.loading}>Loading...</h2>)
              }
             </div>
              )
