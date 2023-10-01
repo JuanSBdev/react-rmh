@@ -1,4 +1,4 @@
-const { Favorite } = require('../DB_connection')
+const { Favorite, User } = require('../DB_connection')
  const postFav = async (req, res)=>{
     try {
         const { userId, name,  status, image, species, id} = req.body;
@@ -24,7 +24,13 @@ const { Favorite } = require('../DB_connection')
             if(!created){
                 throw new Error('already in your list')
             }
-            // await newFavorite.addUsers()
+
+            let userFound = await User.findAll({
+                id:{
+                    userId
+                }
+            })
+            await newFavorite.addUsers(userFound)
             res.status(200).json(newFavorite)
         }
         else{
