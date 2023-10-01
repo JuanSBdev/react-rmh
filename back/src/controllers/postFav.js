@@ -25,7 +25,7 @@ const { Favorite, User } = require('../DB_connection')
                 throw new Error('already in your list')
             }
 
-            let userFound = await User.findAll({
+            let userFound = await User.findOne({
                 id:{
                     userId
                 }
@@ -40,9 +40,17 @@ const { Favorite, User } = require('../DB_connection')
         res.status(501).json({mensaje: error.message})
     }
 };
+
+
 const getFav = async (req, res) => {
     try {
-      const favorites = await Favorite.findAll();
+        let {userId }= req.body;
+        const user = await User.findByPk(userId)
+        if(!user){
+            res.status(404).json({message:'user not found'});
+        }
+
+      const favorites = await user.getFavorites();
       res.status(200).json(favorites);
     } catch (error) {
       res.status(500).json({ message: 'Error al obtener los favoritos', error });
