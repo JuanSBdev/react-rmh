@@ -44,7 +44,7 @@ const { Favorite, User } = require('../DB_connection')
 
 const getFav = async (req, res) => {
     try {
-        let {userId }= req.body;
+        let { userId }= req.params;
         const user = await User.findByPk(userId)
         if(!user){
             res.status(404).json({message:'user not found'});
