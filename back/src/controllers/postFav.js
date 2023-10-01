@@ -24,8 +24,8 @@ const { Favorite } = require('../DB_connection')
             if(!created){
                 throw new Error('already in your list')
             }
-            await newFavorite.addUsers()
-            res.status(200).json(newFav)
+            // await newFavorite.addUsers()
+            res.status(200).json(newFavorite)
         }
         else{
             res.status(401).json({mensaje: 'Faltan datos'})
