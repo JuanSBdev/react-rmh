@@ -10,6 +10,7 @@ import Favorites from './components/favorites/Favorites';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setUser } from './redux/actions';
+import SignUpForm from './components/signUp/SignUpForm';
 function App() {
 
 let dispatch = useDispatch()
@@ -77,16 +78,17 @@ try {
       }, [characters])
       return (
          <div className='App'>
-            {location.pathname !== '/' && <Nav onSearch={onSearch} />}
+            {location.pathname !== '/' && location.pathname !== '/logeame' && <Nav onSearch={onSearch} />}
             <Routes>
                {location.pathname === '/' ? (
                   <Route exact path='/' element={<Form login={login} />} />
-               ) : (
-                  <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
-               )}
+                  ) : (
+                     <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
+                     )}
                <Route path='/abt' element={<About />} />
                <Route path='/detail/:id' element={<Detail />} />
                <Route path='/fav' element={<Favorites/>} />
+               <Route path='/logeame' element={<SignUpForm/>} />
             </Routes>
          </div>
       );

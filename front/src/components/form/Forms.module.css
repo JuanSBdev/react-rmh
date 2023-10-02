@@ -59,7 +59,12 @@
     font-size: 1rem;
     color: red;
 }
-
+.form .p_no_registrado{
+    font-size: .9rem;
+    color: rgb(47, 65, 224);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 12%;
+}
 .div2{
 
     position: relative;
