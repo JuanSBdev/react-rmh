@@ -7,10 +7,11 @@ import { getFavorites } from '../../redux/actions';
 
 export default function Favorites(props) {
   const dispatch = useDispatch();
-  const myFavorites = useSelector(state => state.myFavorites);
+  const userRedux = useSelector(state => state.user);
   useEffect(() => {
-    dispatch(getFavorites());
+    dispatch(getFavorites(userRedux));
   }, [dispatch]);
+  const myFavorites = useSelector(state => state.myFavorites);
   return (
     <div className={styles.Cards}>
       {myFavorites.length > 0 ? (
