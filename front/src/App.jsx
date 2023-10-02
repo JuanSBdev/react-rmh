@@ -9,6 +9,7 @@ import Form from './components/form/Form';
 import Favorites from './components/favorites/Favorites';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
+import { setUser } from './redux/actions';
 function App() {
 
 let dispatch = useDispatch()
@@ -41,7 +42,7 @@ let dispatch = useDispatch()
          const { access } = data;
          setAccess(data);
          access && navigate('/home');
-         dispatch(setUser(data.user))
+         dispatch(setUser(data.user.id))
       });
    }
     

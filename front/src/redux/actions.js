@@ -1,6 +1,18 @@
 import { ADD_FAV, REMOVE_FAV, GET_FAV, POST_USER } from "./action_types";
 import axios from "axios";
 
+
+export const setUser = (user)=>{
+  console.log(user)
+  return function(dispatch){
+    return dispatch ({
+      type: POST_USER,
+      payload: user,
+    })
+
+  }
+}
+
 export const addFav = (character) => {
    const endpoint = 'http://localhost:3001/rickandmorty/fav';
    return function(dispatch) {
