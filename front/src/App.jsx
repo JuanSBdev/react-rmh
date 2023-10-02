@@ -8,7 +8,11 @@ import Detail from './components/Detail';
 import Form from './components/form/Form';
 import Favorites from './components/favorites/Favorites';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 function App() {
+
+let dispatch = useDispatch()
+
    const [characters, setCharacters] = useState([
       {"id":23,"name":"Arcade Alien",
       "status":"unknown",
@@ -32,10 +36,12 @@ function App() {
     function login(userData) {
       const { email, password } = userData;
       const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+      axios(URL + `?email=${email}&password=${password}`)
+      .then(({ data }) => {
          const { access } = data;
          setAccess(data);
          access && navigate('/home');
+         dispatch(setUser(data.user))
       });
    }
     

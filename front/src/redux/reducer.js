@@ -1,6 +1,7 @@
-import { ADD_FAV, REMOVE_FAV, GET_FAV } from "./action_types";
+import { ADD_FAV, REMOVE_FAV, GET_FAV, POST_USER } from "./action_types";
 
     const initialState = {
+        user:[],
         myFavorites:[],
         allCharacters:[]
     }
@@ -29,6 +30,12 @@ import { ADD_FAV, REMOVE_FAV, GET_FAV } from "./action_types";
                             // Agrega otras propiedades de los personajes de SSBB que deseas guardar
                           })),
                         }
+                    case POST_USER:{
+                        return{
+                            ...state,
+                            user: action.payload
+                        }
+                    }
                     
                 default:
                     return{

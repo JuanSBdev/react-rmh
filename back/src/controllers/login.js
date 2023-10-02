@@ -16,7 +16,7 @@ let login = async (req, res)=> {
       }
       if(user){
        if(user.password === password){
-        res.status(200).json({
+        res.status(200).json( {user,
                               access: true
                             });
        }

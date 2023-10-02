@@ -1,4 +1,4 @@
-import { ADD_FAV, REMOVE_FAV, GET_FAV } from "./action_types";
+import { ADD_FAV, REMOVE_FAV, GET_FAV, POST_USER } from "./action_types";
 import axios from "axios";
 
 export const addFav = (character) => {
@@ -31,8 +31,8 @@ export const addFav = (character) => {
        });
     };
  };
- export const getFavorites = () => {
-   const endpoint = 'http://localhost:3001/rickandmorty/fav';
+ export const getFavorites = (userId) => {
+   const endpoint = `http://localhost:3001/rickandmorty/fav/${userId}`;
  
    return function(dispatch) {
      axios.get(endpoint)
