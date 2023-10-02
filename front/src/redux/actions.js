@@ -1,7 +1,15 @@
-import { ADD_FAV, REMOVE_FAV, GET_FAV, POST_USER } from "./action_types";
+import { ADD_FAV, REMOVE_FAV, GET_FAV, SIGN_UP, POST_USER } from "./action_types";
 import axios from "axios";
 
 
+export const signUp = (email, password)=>{
+  let endpoint = 'http://localhost:3001/rickandmorty/login'
+  return function(dispatch){
+    axios.post(endpoint, email, password )
+    alert('usuario registrado')
+  
+  }
+}
 export const setUser = (user)=>{
   console.log(user)
   return function(dispatch){

@@ -27,13 +27,14 @@ export default function validate(input) {
       errors.password = "ingrese un pass numerico";
     }
     if (regexPass.test(input.password) && input.password.length >= 3) {
-        if(input.password === '123'){
-            errors.password = null;
-        }
-        else{
+      errors.password = null;
 
-            errors.password = "Intenta con 123";
-        }
+        // if(input.password === '123'){
+        // }
+        // else{
+
+        //     errors.password = "Intenta con 123";
+        // }
     }
   
     return errors;

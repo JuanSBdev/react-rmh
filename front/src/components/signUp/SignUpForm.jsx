@@ -1,6 +1,11 @@
 import React, {useState} from 'react'
 import styles from './SignUpForm.module.css'
+import { useDispatch } from 'react-redux'
+import { signUp } from '../../redux/actions'
+import { useNavigate } from 'react-router-dom'
 export default function SignUpForm() {
+    let dispatch = useDispatch()
+    const navigate = useNavigate();
 
     const [userData, setUserData] = useState({
         email:'',
@@ -19,7 +24,8 @@ export default function SignUpForm() {
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(userData)
-        // signUp(userData);
+        dispatch(signUp(userData))
+        navigate('/')
     }
 
   return (
